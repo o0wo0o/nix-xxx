@@ -1,0 +1,4 @@
+hardware-configuration.nix
+secrets/
+*.key
+*.pem

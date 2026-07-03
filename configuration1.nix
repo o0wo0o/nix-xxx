@@ -97,8 +97,7 @@
   system.stateVersion = "26.05"; # Did you read the comment?
 
   # home manager
-  home-manager.users = let
-    configTemplate =  { pkgs, lib, ... }: {
+  home-manager.users.owo = { pkgs, lib, ... }: {
 
     home.stateVersion = "26.05"; 
     
@@ -272,11 +271,6 @@
         xkb-options = [ "grp:alt_shift_toggle" ];
       };
     };
-  };
-  in 
-  builtins.mapAttrs (name: value: configTemplate) {
-    owo = {};
-    root = {};
   };
 
   # nix linker
