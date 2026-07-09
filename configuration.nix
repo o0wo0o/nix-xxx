@@ -8,7 +8,6 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    <home-manager/nixos>
   ];
 
   # Bootloader.
@@ -53,7 +52,13 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # clear generations
+  # nix configs
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -75,6 +80,7 @@
     python3
     tor-browser
     keepass
+    gparted
     telegram-desktop
     amneziawg-tools
     amneziawg-go
