@@ -63,10 +63,13 @@
     ${config.nix.package}/bin/nix-env -p /nix/var/nix/profiles/system --delete-generations +3
   '';
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-39.8.10"
+  ];
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim
-    jetbrains.pycharm-oss
+    openvpn
     wget
     firefox
     python3
@@ -87,16 +90,6 @@
   environment.variables = {
     EDITOR = "hx";
     SUDO_EDITOR = "hx";
-  };
-
-  services.tor = {
-    enable = true;
-    client.enable = true;
-
-    settings = {
-      SocksPort = 1488;
-
-    };
   };
 
   system.stateVersion = "26.05"; # Did you read the comment?
