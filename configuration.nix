@@ -53,6 +53,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # nix configs
+  services.fstrim.enable = true;
 
   nix.settings.experimental-features = [
     "nix-command"
