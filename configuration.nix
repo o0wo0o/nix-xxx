@@ -69,9 +69,6 @@
     ${config.nix.package}/bin/nix-env -p /nix/var/nix/profiles/system --delete-generations +3
   '';
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-39.8.10"
-  ];
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim
@@ -88,6 +85,22 @@
     git
     wl-clipboard
   ];
+
+  # Flatpak packages
+  services.flatpak = {
+    enable = true;
+
+    remotes = [
+      {
+        name = "flathub";
+        location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+      }
+    ];
+
+    packages = [
+      "com.logseq.Logseq"
+    ];
+  };
 
   environment.sessionVariables = {
     GDK_BACKEND = "wayland";
