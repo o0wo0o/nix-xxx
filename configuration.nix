@@ -80,6 +80,8 @@
     keepass
     gparted
     telegram-desktop
+    burpsuite
+    steam
     amneziawg-tools
     amneziawg-go
     git
@@ -99,6 +101,8 @@
 
     packages = [
       "com.logseq.Logseq"
+      "com.cakewallet.CakeWallet"
+      "com.cypherstack.stackwallet"
     ];
   };
 
