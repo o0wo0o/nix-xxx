@@ -101,8 +101,7 @@
 
     packages = [
       "com.logseq.Logseq"
-      "com.cakewallet.CakeWallet"
-      "com.cypherstack.stackwallet"
+      "org.torproject.torbrowser-launcher"
     ];
   };
 
