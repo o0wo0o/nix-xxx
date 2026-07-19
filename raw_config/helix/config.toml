@@ -1,1 +1,16 @@
-/nix/store/1bz5ghg15hzih9ss4fm3h6p3cds974rz-home-manager-files/.config/helix/config.toml
+theme = "gruvbox_transparent"
+
+[editor]
+auto-completion = true
+clipboard-provider = "wayland"
+line-number = "relative"
+mouse = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+display-messages = true
+

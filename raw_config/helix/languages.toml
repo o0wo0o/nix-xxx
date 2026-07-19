@@ -1,1 +1,52 @@
-/nix/store/1bz5ghg15hzih9ss4fm3h6p3cds974rz-home-manager-files/.config/helix/languages.toml
+[[language]]
+auto-format = true
+language-servers = ["nixd"]
+name = "nix"
+
+[language.formatter]
+command = "/nix/store/mhi45zliliv6qhvhb8g5sycy3jpv47rf-nixfmt-1.3.1/bin/nixfmt"
+
+[[language]]
+auto-format = true
+language-servers = ["pyright"]
+name = "python"
+
+[language.formatter]
+args = ["-", "--quiet"]
+command = "/nix/store/m0nv5kyd9i1v8m8badmva3qfxnbhhkkr-python3.13-black-25.1.0/bin/black"
+
+[[language]]
+auto-format = true
+language-servers = ["vtsls"]
+name = "javascript"
+
+[language.formatter]
+args = ["--parser", "typescript"]
+command = "/nix/store/p22asx0c940hq2l30c7fkx13bxmsprm3-prettier-3.8.3/bin/prettier"
+
+[[language]]
+auto-format = false
+language-servers = ["phpactor"]
+name = "php"
+
+[[language]]
+language-servers = ["sqls"]
+name = "sql"
+
+[language-server.nixd]
+command = "nixd"
+
+[language-server.phpactor]
+args = ["language-server"]
+command = "phpactor"
+
+[language-server.pyright]
+args = ["--stdio"]
+command = "pyright-langserver"
+
+[language-server.sqls]
+command = "sqls"
+
+[language-server.vtsls]
+args = ["--stdio"]
+command = "vtsls"
